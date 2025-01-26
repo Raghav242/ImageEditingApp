@@ -1,0 +1,181 @@
+load res/input/uni.png image1
+save res/resImage.jpg image1
+
+#Brighten image
+brighten 20 image1 brightenedImage
+save res/brightenedres.jpg brightenedImage
+
+#Sepia filter
+sepia image1 sepiaImage
+save res/sepiares.jpg sepiaImage
+
+#Grayscale conversion
+grayscale image1 grayscaleImage
+save res/grayscaleres.jpg grayscaleImage
+
+#Blur image
+blur image1 blurredImage
+save res/blurredres.jpg blurredImage
+
+#Sharpen image
+sharpen image1 sharpenedImage
+save res/sharpenedres.jpg sharpenedImage
+
+# Value component
+value-component image1 valueComponentImage
+save res/valueComponentres.jpg valueComponentImage
+
+# Intensity component
+intensity-component image1 intensityComponentImage
+save res/intensityComponentres.jpg intensityComponentImage
+
+# Vertical flip
+flip image1 flippedVerticalImage
+save res/flippedVerticalres.jpg flippedVerticalImage
+
+# Horizontal flip
+horizontal-flip image1 flippedHorizontalImage
+save res/flippedHorizontalres.jpg flippedHorizontalImage
+
+# Red component
+red-component image1 redImage
+save res/redres.jpg redImage
+
+# Green component
+green-component image1 greenImage
+save res/greenres.jpg greenImage
+
+# Blue component
+blue-component image1 blueImage
+save res/blueres.jpg blueImage
+
+# RGB split
+rgb-split image1 redImage greenImage blueImage
+save res/split/redSplitres.jpg redImage
+save res/split/greenSplitres1.jpg greenImage
+save res/split/blueSplitres.jpg blueImage
+
+# RGB combine
+rgb-combine combinedImage redImage greenImage blueImage
+save res/combinedres.ppm combinedImage
+
+#PPm format
+#load res/input/samplePPM.ppm image2
+#save res/resPPMImage.jpg image2
+
+#Generate Histogram
+histogram image1 histImage
+save res/histOriginalImage.jpg histImage
+
+#Color correction
+load res/input/uni.png image1
+color-correct image1 colorCorrect
+save res/colorCorrect.jpg colorCorrect
+
+#Histogram for color corrected image
+histogram colorCorrect colorCorrectHist
+save res/colorCorrectHist.jpg colorCorrectHist
+
+#levels adjustment
+levels-adjust 100 100 105 image1 levelAdjust
+save res/levelAdjusted.jpg levelAdjust
+
+#Level adjustment different values
+levels-adjust 50 100 105 image1 levelAdjust2
+
+save res/levelAdjusted2.jpg levelAdjust2
+
+#Histogram for level adjusted image
+histogram levelAdjust levelAdjustHist
+save res/levelAdjustedHist.jpg levelAdjustHist
+
+#Histogram for level adjusted image with diff value
+histogram levelAdjust2 levelAdjustHist2
+save res/levelAdjustedHist2.jpg levelAdjustHist2
+
+# Compression
+compress 50 image1 compressedImage
+save res/compressedres.jpg compressedImage
+
+#compression with value 90
+# Compression
+compress 90 image1 compressedImage1
+save res/compressedres1.jpg compressedImage1
+
+#Histogram for compresion image
+histogram compressedImage compressedHist
+save res/compressedHist.jpg compressedHist
+
+#Histogram for compresion image with 90
+histogram compressedImage1 compressedHist1
+save res/compressedHist1.jpg compressedHist1
+
+# Split view - Blur with 50% split
+blur image1 splitBlurredImage split 50
+save res/splitBlurredres.jpg splitBlurredImage
+
+# Split view - Sharpen with 30% split
+sharpen image1 splitSharpenedImage split 30
+save res/splitSharpenedres.jpg splitSharpenedImage
+
+# Split view - Sepia with 60% split
+sepia image1 splitSepiaImage split 60
+save res/splitSepiares.jpg splitSepiaImage
+
+# Split view - Grayscale with 40% split
+grayscale image1 splitGrayscaleImage split 40
+save res/splitGrayscaleres.jpg splitGrayscaleImage
+
+#Color correction view - correction with 40% split
+color-correct image1 splitColorCorrect 40
+save res/splitColorCorrection.jpg splitColorCorrect
+
+#levels adjustment with percentage
+levels-adjust 200 200 205 image1 splitLevelAdjust 50
+save res/splitLevelAdjusted.jpg splitLevelAdjust
+
+# Load the original image and the modified masked image
+load res/input/uni.png image1
+load res/input/uni-modified.png maskedImage
+
+# Apply blur to the masked image
+blur image1 maskedImage transformedImage
+save res/partial/partialBlur.png transformedImage
+
+# Apply sharpen to the masked image
+sharpen image1 maskedImage transformedImage
+save res/partial/partialSharpen.png transformedImage
+
+# Apply sepia to the masked image
+sepia image1 maskedImage transformedImage
+save res/partial/partialSepia.png transformedImage
+
+# Apply grayscale to the masked image
+grayscale image1 maskedImage transformedImage
+save res/partial/partialGray.png transformedImage
+
+# Extract red component from the masked image
+red-component image1 maskedImage transformedImage
+save res/partial/partialRed.png transformedImage
+
+# Extract green component from the masked image
+green-component image1 maskedImage transformedImage
+save res/partial/partialGreen.png transformedImage
+
+# Extract blue component from the masked image
+blue-component image1 maskedImage transformedImage
+save res/partial/partialBlue.png transformedImage
+
+# value component from the masked image
+value-component image1 maskedImage transformedImage
+save res/partial/value.png transformedImage
+
+# instensity component from the masked image
+intensity-component image1 maskedImage transformedImage
+save res/partial/intensity.png transformedImage
+
+
+
+
+
+
